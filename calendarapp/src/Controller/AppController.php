@@ -42,8 +42,8 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'loginRedirect' => [
-                'controller' => 'Articles',
-                'action' => 'index'
+                'controller' => 'users',
+                'action' => 'add'
             ],
             'logoutRedirect' => [
                 'controller' => 'Pages',
@@ -55,7 +55,7 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index', 'view', 'display', 'logout']);
+        $this->Auth->allow([ 'view', 'display', 'logout']);
     }
         /*
          * Enable the following components for recommended CakePHP security settings.
